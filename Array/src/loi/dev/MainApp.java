@@ -1,6 +1,7 @@
 package loi.dev;
 
 import java.net.SecureCacheResponse;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class MainApp {
@@ -50,6 +51,16 @@ public class MainApp {
 			
 		}
 		System.out.format("Mảng có %d số chẵn và %d số lẻ ",demChan,demLe).println();
+		
+		/// sắp xêp tăng dần, giảm dần
+		
+		int c;
+		for (int i = 0; i < arr.length-1; i++) {
+			for (int j = 1; j < arr.length; j++) {
+				
+			}
+			
+		}
 		
 		
 		
