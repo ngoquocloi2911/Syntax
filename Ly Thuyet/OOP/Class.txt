@@ -1,0 +1,12 @@
+chậu -- khuôn(class)
+
+property
+method
+private
+set
+get
+
+tham trị: tạo vùng nhớ mới
+
+tham chiếu: không tạo vùng nhớ- thay đổi đối tượng trong vùng nhớ
+( phải cùng kiểu)

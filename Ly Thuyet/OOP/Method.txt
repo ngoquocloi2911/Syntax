@@ -1,0 +1,7 @@
+hàm khởi tạo -- trùng tên với class
+hàm rỗng để dùng
+khởi tạo bao nhiêu hàm cũng được
+là hàm được gọi khi khởi tạo đối tượng
+
+dữ liệu nào có privite -- có xử lý thì phải khởi tạo get, set
+hàm tự sinh -- construct - get-set

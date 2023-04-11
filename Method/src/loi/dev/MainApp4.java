@@ -20,8 +20,20 @@ double dau =1;
 		else 
 		{
 			
+			
+			
 		}
 		
+		double c= Math.pow(3, 3);
+		System.out.println(c);
+		
+	}
+	
+	static int fact(int n) {
+		if(n==1) return 1;
+		return n *fact(n-1);
+	}
+	
 	}
 
 }

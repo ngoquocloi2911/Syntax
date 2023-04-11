@@ -15,6 +15,7 @@ public class MainApp {
 			second = first + Math.pow(x, mu)/ fact(mu);
 		}
 		System.out.println(first);
+		System.out.println();
 		
 		// TODO Auto-generated method stub
 		

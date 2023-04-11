@@ -1,0 +1,9 @@
+person -- kế thừa những cái chung đã có
+
+vì sao lại gọi supper -- bắt buộc phải gọi hàm khởi tạo của thằng cha
+
+private chỉ hoạt động trong vùng class khai báo 
+
+protertec: con có thể thấy được -- có thể gọi ở trang khác
+
+public -- chỗ nào lấy cũng được
