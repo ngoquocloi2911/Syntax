@@ -1,0 +1,9 @@
+-- mặc định là phương thức trừu tượng abstract
+ -- không cần từ khóa abstract
+
+-- implement các interface từ các class
+
+-- khi nào cần interface (khác bản chất -- cùng hành động(method)
+ -- abstract (cùng bản chất)
+
+-- khác bản chất

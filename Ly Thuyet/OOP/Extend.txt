@@ -7,3 +7,5 @@ private chỉ hoạt động trong vùng class khai báo
 protertec: con có thể thấy được -- có thể gọi ở trang khác
 
 public -- chỗ nào lấy cũng được
+
+--override ( ghi đè)

@@ -1,0 +1,15 @@
+cha có thể tham chiếu đến các đối tượng con 
+có thể dễ dàng bổ sung bằng ghì đè -- không ảnh hưởng đến dòng code đã đóng gói
+-- đa hình 
+
+-- trừu tượng (abstract)
+
+++ phương thức đã có nhưng cụ thể làm thế  nào thì chưa rõ
+
+++ Lớp có chứa phương thức trừu tượng thì đó là lớp trừu tượng
+
+++ không thể tạo đối tượng từ lớp trừu tượng , có thể tạo phương thức thường -- bắt buộc phải có lớp thực thi
+
+-- lớp thực thi: trong lớp thực hiện những công việc cụ thể
+
+-- ràng buộc con phải thực thi -- giải quyết được bài toán tổng quát

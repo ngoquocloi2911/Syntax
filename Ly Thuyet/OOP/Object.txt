@@ -1,0 +1,19 @@
+*********************
+kiểu dữ liệu primitive : int, double, boolean, char
+ -- kiểu dữ liệu cơ bản - được lưu trữ trực tiếp trong bộ nhớ
+
+
+
+************
+kiểu dữ liệu Object:  String, Integer, Double, Boolean
+ -- kiểu dữ liệu tham chiếu đến đối tượng -- đối tượng này được lưu trữ trong bộ nhớ heap
+
+
+***** Sự khác nhau giữa 2 kiểu dữ liệu 
+-- premitive truyển trực tiếp vào đối tượng còn object phải được truyền dưới dạng tham chiếu
+
+-- premitive không thể có giá trị null -- còn object thì có thể
+
+-- premitive được sử dụng trực tiếp với toán tử số học -- còn object thì phải ép kiểu mới sử dụng được
+
+-- premitive có kích thước bộ nhớ cố định -- còn object phụ thuộc vào đối tượng, dữ liệu lưu trữ trong đối tượng đó

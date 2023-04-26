@@ -1,0 +1,21 @@
+-- có thể mở rộng mảng
+-- dữ liệu có tối ưu hay không ??
+
+ArrayList (lớp thực thi)
+-- tạo ra 1 mảng -- nếu vượt quá sẽ tự động mở rộng ( tạo ra một mảng mới mở rộng hơn, cop từ mảng cũ sang) -- lấy từ dữ liệu sẵn có thì dễ dàng (index)
+
+LinkedList
+-- tạo ra 1 mảng -- nếu mở rộng thì dễ dàng vì -- cứ móc từng thằng nối tiếp, không khởi tạo mới như arraylist -- nhưng đọc lại bị chậm vì phải đọc nối từng phần
+
+Set - HashSet
+
+-- Đối tượng là duy nhất -- mới  thực thi được
+ -- List thì có rồi chèn lại vẫn đc
+
+Map
+
+-- Tham chiếu dữ liệu thông qua key - value -- có định danh
+-- các kiểu tham chiếu trên là qua index
+
+Bài tập về sắp xếp
+

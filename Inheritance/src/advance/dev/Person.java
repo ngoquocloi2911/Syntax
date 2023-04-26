@@ -2,9 +2,9 @@ package advance.dev;
 
 public class Person {
 
-	protected String name;
-	protected  int old;
-	protected String phone;
+	 String name;
+	 int old;
+	 String phone;
 	
 	public Person(String name, int old, String phone) {
 		super();

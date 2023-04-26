@@ -3,7 +3,8 @@ package advance.dev;
 public class Teacher extends Person {
 	
 	String maGV;
-	int hsl;
+	double hsl;
+	double luongCB = 4500000;
 
 	public Teacher(String name, int old, String phone) {
 		super(name, old, phone);
@@ -11,7 +12,9 @@ public class Teacher extends Person {
 		
 	}
 
-	public Teacher(String name, int old, String phone, String maGV, int hsl) {
+	
+
+	public Teacher(String name, int old, String phone, String maGV, Double hsl) {
 		super(name, old, phone);
 		this.maGV = maGV;
 		this.hsl = hsl;
@@ -25,12 +28,17 @@ public class Teacher extends Person {
 		this.maGV = maGV;
 	}
 
-	public int getHsl() {
+	public double getHsl() {
 		return hsl;
 	}
 
-	public void setHsl(int hsl) {
+	public void setHsl(Double hsl) {
 		this.hsl = hsl;
+	}
+	
+	public double tinhLuong()
+	{
+		return hsl*luongCB;
 	}
 	
 	

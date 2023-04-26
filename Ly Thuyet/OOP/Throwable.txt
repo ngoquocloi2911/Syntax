@@ -1,0 +1,10 @@
+ArithmeticException ( chia trúng số 0 ) -- error
+
+NullPointerException (null) -- string s = null ( in ra giá trị đó)
+
+NumberFormatException -- không thể convert chuỗi -- khi khai báo là số
+
+đùng try catch
+
+có thể tự định nghĩa Exception nhưng phải kế thừa từ thằng cha
+
