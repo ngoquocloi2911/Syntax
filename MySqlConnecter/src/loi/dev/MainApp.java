@@ -7,8 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import loi.dev.data.dao.CategoryDAO;
+import loi.dev.data.dao.ProductDAO;
 import loi.dev.data.driver.MySQLDriver;
 import loi.dev.data.impl.CategoryImpl;
+import loi.dev.data.impl.ProductImpl;
+import loi.dev.data.model.Product;
 
 public class MainApp {
 	
@@ -16,14 +19,12 @@ public class MainApp {
 	public static void main(String[] args) {
 		
 		// TODO Auto-generated method stub
-//		Connection con = MySQLDriver.getInstance().getConnection();
-//		//CRUD
-//		create(con);
-//		read(con);
-//		update(con);
-//		delete(con);
-		CategoryDAO categoryDAO = new CategoryImpl();
-		categoryDAO.delete(3);
+		Connection con = MySQLDriver.getInstance().getConnection();
+//
+//		CategoryDAO categoryDAO = new CategoryImpl();
+//		categoryDAO.delete(3);
+		ProductDAO productDAO = new ProductImpl();
+		productDAO.delete(0);
 
 	}
 
