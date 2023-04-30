@@ -1,6 +1,7 @@
 package loi.dev.data.model;
 
 public class User {
+	private int id;
 	private String email;
 	private String password;
 	private String role;
@@ -10,6 +11,19 @@ public class User {
 		this.email = email;
 		this.password = password;
 		this.role = role;
+	}
+	public User(int id, String email, String password, String role) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.role = role;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getEmail() {
 		return email;
@@ -29,6 +43,8 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	
+	
 	
 
 }

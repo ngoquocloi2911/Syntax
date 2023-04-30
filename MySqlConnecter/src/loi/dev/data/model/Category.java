@@ -1,5 +1,9 @@
 package loi.dev.data.model;
 
+import java.util.List;
+
+import loi.dev.data.dao.DatabaseDao;
+
 public class Category {
 	private int id;
 	private String name;
@@ -43,4 +47,7 @@ public class Category {
 		this.thumbnail = thumbnail;
 	}
 
+	public List<Product> products(){
+		return DatabaseDao.getInstance().getProductDao().findByCategory(id);
+	}
 }

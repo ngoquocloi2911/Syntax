@@ -7,16 +7,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import loi.dev.data.dao.Order_ItemDAO;
+import loi.dev.data.dao.OrderItemDao;
 import loi.dev.data.driver.MySQLDriver;
 import loi.dev.data.model.Category;
-import loi.dev.data.model.Order_Item;
+import loi.dev.data.model.OrderItem;
 
-public class Order_ItemImpl implements Order_ItemDAO {
+public class OrderItemImpl implements OrderItemDao {
 	Connection con = MySQLDriver.getInstance().getConnection();
 
 	@Override
-	public boolean insert(Order_Item order_Item) {
+	public boolean insert(OrderItem order_Item) {
 		// TODO Auto-generated method stub
 		String sql = "INSERT INTO ORDER-ITEMS VALUES(NULL, ?, ?)";
 		try {
@@ -33,7 +33,7 @@ public class Order_ItemImpl implements Order_ItemDAO {
 	}
 
 	@Override
-	public boolean update(Order_Item order_Item) {
+	public boolean update(OrderItem order_Item) {
 		// TODO Auto-generated method stub
 		String sql = "UPDATE ORDER-ITEMS SET quality = ?, price = ? WHERE id = ?";
 		try {
@@ -66,7 +66,7 @@ public class Order_ItemImpl implements Order_ItemDAO {
 	}
 
 	@Override
-	public Order_Item find(int id) {
+	public OrderItem find(int id) {
 		// TODO Auto-generated method stub
 		String sql = "SELECT * FROM ORDER-ITEMS" ;
 		try {
@@ -77,7 +77,7 @@ public class Order_ItemImpl implements Order_ItemDAO {
 				Integer quanlity = rs.getInt("quanlity");
 				Long price = rs.getLong("price");
 				
-				return new Order_Item(id, quanlity, price);
+				return new OrderItem(id, quanlity, price);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -87,9 +87,9 @@ public class Order_ItemImpl implements Order_ItemDAO {
 	}
 
 	@Override
-	public List<Order_Item> findAll() {
+	public List<OrderItem> findAll() {
 		// TODO Auto-generated method stub
-		List<Order_Item> orList = new ArrayList<>();
+		List<OrderItem> orList = new ArrayList<>();
 		String sql = "SELECT * FROM CATEGORIES" ;
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
@@ -100,7 +100,7 @@ public class Order_ItemImpl implements Order_ItemDAO {
 				Integer quanlity = rs.getInt("quanlity");
 				Long price = rs.getLong("price");
 				
-				orList.add(new Order_Item(id, quanlity, price));
+				orList.add(new OrderItem(id, quanlity, price));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

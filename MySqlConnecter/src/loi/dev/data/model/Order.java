@@ -1,20 +1,28 @@
 package loi.dev.data.model;
 
+import java.sql.Timestamp;
+
 public class Order {
 	private int id;
 	private String code;
 	private String status;
+	private int userId;
+	private Timestamp createdAt;
 	
-	public Order(String code, String status) {
+	public Order(String code, String status, int userId, Timestamp createdAt) {
 		super();
 		this.code = code;
 		this.status = status;
+		this.userId = userId;
+		this.createdAt = createdAt;
 	}
-	public Order(int id, String code, String status) {
+	public Order(int id, String code, String status, int userId, Timestamp createdAt) {
 		super();
 		this.id = id;
 		this.code = code;
 		this.status = status;
+		this.userId = userId;
+		this.createdAt = createdAt;
 	}
 	public int getId() {
 		return id;
@@ -34,5 +42,19 @@ public class Order {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	public Timestamp getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Timestamp createdAt) {
+		this.createdAt = createdAt;
+	}
+	
+	
 
 }

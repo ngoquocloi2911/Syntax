@@ -7,24 +7,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import loi.dev.data.dao.GalleniesDAO;
+import loi.dev.data.dao.GalleryDao;
 import loi.dev.data.driver.MySQLDriver;
 import loi.dev.data.model.Category;
-import loi.dev.data.model.Galleni;
+import loi.dev.data.model.Gallery;
 
-public class GalleniImpl implements GalleniesDAO {
+public class GalleryImpl implements GalleryDao {
 	Connection con = MySQLDriver.getInstance().getConnection();
 
-	public GalleniImpl(int id, String url) {
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
-	public boolean insert(loi.dev.data.model.Galleni gallenies) {
-		String sql = "INSERT INTO GALLENIES VALUES(NULL, ?)";
+	public boolean insert(Gallery gallery) {
+		String sql = "INSERT INTO GALLERIES VALUES(NULL, ?, ?)";
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
-			stmt.setString(1, gallenies.getUrl());
+			stmt.setString(1, gallery.getUrl());
+			stmt.setInt(2, gallery.getProductId());
 			
 			stmt.execute();
 		} catch (SQLException e) {
@@ -35,13 +33,14 @@ public class GalleniImpl implements GalleniesDAO {
 	}
 
 	@Override
-	public boolean update(loi.dev.data.model.Galleni gallenies) {
+	public boolean update(loi.dev.data.model.Gallery gallery) {
 		// TODO Auto-generated method stub
-		String sql = "UPDATE GALLENIES SET url = ? WHERE id = ?";
+		String sql = "UPDATE GALLERIES SET url = ?, product_id = ? WHERE id = ?";
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
-			stmt.setString(1, gallenies.getUrl());
-			stmt.setInt(3, gallenies.getId());
+			stmt.setString(1, gallery.getUrl());
+			stmt.setInt(2, gallery.getProductId());
+			stmt.setInt(3, gallery.getId());
 			return stmt.execute();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -53,7 +52,7 @@ public class GalleniImpl implements GalleniesDAO {
 	@Override
 	public boolean delete(int id) {
 		// TODO Auto-generated method stub
-		String sql = "DELETE FROM GALLENIES WHERE ID = ?";
+		String sql = "DELETE FROM GALLERIES WHERE ID = ?";
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setInt(1, id);
@@ -67,7 +66,7 @@ public class GalleniImpl implements GalleniesDAO {
 	}
 
 	@Override
-	public Galleni find(int id) {
+	public Gallery find(int id) {
 		// TODO Auto-generated method stub
 		String sql = "SELECT * FROM GALLENIES" ;
 		try {
@@ -76,8 +75,9 @@ public class GalleniImpl implements GalleniesDAO {
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				String url = rs.getString("url");
+				int productId = rs.getInt("product_id");
 				
-				return new Galleni(id, url);
+				return new Gallery(id, url, productId);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -87,10 +87,10 @@ public class GalleniImpl implements GalleniesDAO {
 	}
 
 	@Override
-	public List<loi.dev.data.model.Galleni> findAll() {
+	public List<loi.dev.data.model.Gallery> findAll() {
 		// TODO Auto-generated method stub
-		List<Galleni> gallenis = new ArrayList<>();
-		String sql = "SELECT * FROM GALLENIES" ;
+		List<Gallery> galleryList = new ArrayList<>();
+		String sql = "SELECT * FROM GALLERIES" ;
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
@@ -98,14 +98,36 @@ public class GalleniImpl implements GalleniesDAO {
 			while (rs.next()) {
 				int id = rs.getInt("id");
 				String url = rs.getString("url");
+				int productId = rs.getInt("product_id");
 				
-				gallenis.add(new Galleni(id, url));
+				galleryList.add(new Gallery(id, url, productId));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return gallenis;
+		return galleryList;
+	}
+
+	@Override
+	public List<Gallery> findByProduct(int id) {
+		List<Gallery> galleryList = new ArrayList<>();
+		String sql = "SELECT * FROM GALLERIES WHERE product_id = ? "  ;
+		try {
+			PreparedStatement stmt = con.prepareStatement(sql);
+			
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				String url = rs.getString("url");
+				int productId = rs.getInt("product_id");
+				
+				galleryList.add(new Gallery(id, url, productId));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return galleryList;
 	}
 
 }

@@ -7,12 +7,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import loi.dev.data.dao.OrderDAO;
+import loi.dev.data.dao.OrderDao;
 import loi.dev.data.driver.MySQLDriver;
 import loi.dev.data.model.Category;
 import loi.dev.data.model.Order;
 
-public class OrderImpl implements OrderDAO {
+public class OrderImpl implements OrderDao {
 	Connection con = MySQLDriver.getInstance().getConnection();
 
 	@Override

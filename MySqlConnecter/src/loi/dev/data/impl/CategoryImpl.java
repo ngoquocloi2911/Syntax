@@ -7,11 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import loi.dev.data.dao.CategoryDAO;
+import loi.dev.data.dao.CategoryDao;
 import loi.dev.data.driver.MySQLDriver;
 import loi.dev.data.model.Category;
 
-public class CategoryImpl implements CategoryDAO {
+public class CategoryImpl implements CategoryDao {
 	Connection con = MySQLDriver.getInstance().getConnection();
 
 	@Override
@@ -106,6 +106,12 @@ public class CategoryImpl implements CategoryDAO {
 			e.printStackTrace();
 		}
 		return cateList;
+	}
+
+	@Override
+	public List<Category> findByCategory(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 
